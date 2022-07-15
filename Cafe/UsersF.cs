@@ -20,6 +20,18 @@ namespace Cafe
 
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djdf1\Documents\Cafedb.mdf;Integrated Security=True;Connect Timeout=30");
 
+        void populate()
+        {
+            Con.Open();
+            string query = "select * from UsersTbl";
+            SqlDataAdapter sda = new SqlDataAdapter(query,Con);  
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            UsersGV.DataSource = ds.Tables[0];  
+            Con.Close();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -53,7 +65,24 @@ namespace Cafe
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Con.Open();
+            string query = "insert into UsersTbl values('" + UnameTb.Text + "','" + UphoneTb.Text + "','" + UpasswordTb.Text + "')";
+            SqlCommand cmd = new SqlCommand (query,Con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Пользователь создан");
+            Con.Close();
+            populate();
+        }
 
+        private void UsersF_Load(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        private void UsersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            
         }
     }
 }

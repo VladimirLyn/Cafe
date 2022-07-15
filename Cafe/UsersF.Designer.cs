@@ -40,18 +40,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.UpasswordTb = new System.Windows.Forms.TextBox();
             this.UphoneTb = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UsersGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.UnameTb = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.button3.Location = new System.Drawing.Point(8, 149);
@@ -64,24 +64,24 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.button5.Location = new System.Drawing.Point(310, 229);
+            this.button5.Location = new System.Drawing.Point(363, 229);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 70);
+            this.button5.Size = new System.Drawing.Size(150, 75);
             this.button5.TabIndex = 20;
             this.button5.Text = "Удалить";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.button2.Location = new System.Drawing.Point(169, 229);
+            this.button2.Location = new System.Drawing.Point(207, 229);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 70);
+            this.button2.Size = new System.Drawing.Size(150, 75);
             this.button2.TabIndex = 19;
             this.button2.Text = "Изменить";
             this.button2.UseVisualStyleBackColor = false;
@@ -92,7 +92,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
             this.label7.Font = new System.Drawing.Font("Balthazar", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
-            this.label7.Location = new System.Drawing.Point(601, 75);
+            this.label7.Location = new System.Drawing.Point(579, 56);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(248, 28);
             this.label7.TabIndex = 18;
@@ -136,12 +136,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.button1.Location = new System.Drawing.Point(23, 229);
+            this.button1.Location = new System.Drawing.Point(51, 229);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 70);
+            this.button1.Size = new System.Drawing.Size(150, 75);
             this.button1.TabIndex = 5;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = false;
@@ -175,37 +175,43 @@
             // 
             // UpasswordTb
             // 
-            this.UpasswordTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.UpasswordTb.BackColor = System.Drawing.Color.Blue;
             this.UpasswordTb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UpasswordTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.UpasswordTb.Location = new System.Drawing.Point(242, 162);
             this.UpasswordTb.Name = "UpasswordTb";
-            this.UpasswordTb.Size = new System.Drawing.Size(202, 32);
+            this.UpasswordTb.Size = new System.Drawing.Size(271, 32);
             this.UpasswordTb.TabIndex = 4;
             // 
             // UphoneTb
             // 
-            this.UphoneTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.UphoneTb.BackColor = System.Drawing.Color.Blue;
             this.UphoneTb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UphoneTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.UphoneTb.Location = new System.Drawing.Point(242, 124);
             this.UphoneTb.Name = "UphoneTb";
-            this.UphoneTb.Size = new System.Drawing.Size(202, 32);
+            this.UphoneTb.Size = new System.Drawing.Size(271, 32);
             this.UphoneTb.TabIndex = 3;
             // 
-            // dataGridView1
+            // UsersGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(192)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(450, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(489, 622);
-            this.dataGridView1.TabIndex = 1;
+            this.UsersGV.AllowUserToAddRows = false;
+            this.UsersGV.AllowUserToDeleteRows = false;
+            this.UsersGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(192)))));
+            this.UsersGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.UsersGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.UsersGV.Location = new System.Drawing.Point(579, 87);
+            this.UsersGV.Name = "UsersGV";
+            this.UsersGV.ReadOnly = true;
+            this.UsersGV.RowHeadersWidth = 35;
+            this.UsersGV.RowTemplate.Height = 25;
+            this.UsersGV.Size = new System.Drawing.Size(337, 622);
+            this.UsersGV.TabIndex = 1;
+            this.UsersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersGV_CellContentClick);
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.button4.Location = new System.Drawing.Point(9, 234);
@@ -218,12 +224,12 @@
             // 
             // UnameTb
             // 
-            this.UnameTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.UnameTb.BackColor = System.Drawing.Color.Blue;
             this.UnameTb.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UnameTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.UnameTb.Location = new System.Drawing.Point(242, 87);
             this.UnameTb.Name = "UnameTb";
-            this.UnameTb.Size = new System.Drawing.Size(202, 32);
+            this.UnameTb.Size = new System.Drawing.Size(271, 32);
             this.UnameTb.TabIndex = 2;
             // 
             // panel1
@@ -239,7 +245,7 @@
             this.panel1.Controls.Add(this.UpasswordTb);
             this.panel1.Controls.Add(this.UphoneTb);
             this.panel1.Controls.Add(this.UnameTb);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.UsersGV);
             this.panel1.Location = new System.Drawing.Point(134, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(968, 787);
@@ -262,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1120, 850);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
@@ -274,7 +280,8 @@
             this.Name = "UsersF";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsersF";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UsersF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.UsersGV)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -296,7 +303,7 @@
         private Label label5;
         private TextBox UpasswordTb;
         private TextBox UphoneTb;
-        private DataGridView dataGridView1;
+        private DataGridView UsersGV;
         private Button button4;
         private TextBox UnameTb;
         private Panel panel1;
