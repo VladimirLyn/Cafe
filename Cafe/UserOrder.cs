@@ -11,11 +11,15 @@ using System.Windows.Forms;
 
 namespace Cafe
 {
+
     public partial class UserOrder : Form
     {
+        DataSet ds = new DataSet();
         public UserOrder()
         {
             InitializeComponent();
+
+            
         }
 
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djdf1\Documents\Cafedb.mdf;Integrated Security=True;Connect Timeout=30");
@@ -29,7 +33,6 @@ namespace Cafe
             var ds = new DataSet();
             sda.Fill(ds);
             ItemsGV.DataSource = ds.Tables[0];
-            OrdersGv.DataSource = ds.Tables[0];
             Con.Close();
         }
 
@@ -84,10 +87,16 @@ namespace Cafe
         {
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Con.Open();
+            string query = "select * from ItemTbl where ItemNum = "+ NumberOfItem.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            sda.Fill(ds);
+            ItemsGV1.DataSource = ds.Tables[0];
+            Con.Close();
         }
 
         DataTable table = new DataTable();
@@ -139,6 +148,16 @@ namespace Cafe
             this.Hide();
             UsersF user = new UsersF();
             user.Show(); 
+        }
+
+        private void ItemsGV1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void NumberOfItem_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

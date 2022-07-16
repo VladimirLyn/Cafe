@@ -213,6 +213,7 @@
             this.ItemsGV.RowTemplate.Height = 25;
             this.ItemsGV.Size = new System.Drawing.Size(443, 716);
             this.ItemsGV.TabIndex = 1;
+            this.ItemsGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemsGV_CellContentClick);
             // 
             // CatCb
             // 

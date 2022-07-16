@@ -2,19 +2,37 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Cafe
 {
     public partial class GuestOrder : Form
     {
+        DataSet ds = new DataSet();
+
         public GuestOrder()
         {
             InitializeComponent();
+        }
+
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djdf1\Documents\Cafedb.mdf;Integrated Security=True;Connect Timeout=30");
+
+        void populate()
+        {
+            Con.Open();
+            string query = "select * from ItemTbl";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ItemsGV.DataSource = ds.Tables[0];
+            Con.Close();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -51,8 +69,16 @@ namespace Cafe
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Con.Open();
+            string query = "select * from ItemTbl where ItemNum = " + NumberOfItem.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            sda.Fill(ds);
+            ItemsGV1.DataSource = ds.Tables[0];
+            Con.Close();
         }
+
+        DataTable table = new DataTable();
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
@@ -90,6 +116,11 @@ namespace Cafe
         }
 
         private void GuestOrder_Load(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

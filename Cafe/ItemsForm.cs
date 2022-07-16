@@ -159,5 +159,10 @@ namespace Cafe
                 populate();
             }
         }
+
+        private void ItemsGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
