@@ -37,7 +37,7 @@ namespace Cafe
 
         private void label6_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -124,5 +124,54 @@ namespace Cafe
         {
 
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Con.Open();
+            string query = "select * from ItemTbl where ItemNum = " + NumberOfItem.Text;
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            sda.Fill(ds);
+            ItemsGV1.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
+        }
+        
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+        }
+
+        /*
+         * Con.Open();
+                string query = "update ItemTbl set ItemName ='" + ItemNameTb.Text + "',Itemcat ='" + CatCb.SelectedItem.ToString() +"',ItemPrice = '"+PriceTb.Text + "'where ItemNum ='" + ItemNumTb.Text + "'";
+                SqlCommand cmd = new SqlCommand(query, Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Товар изменён");
+                Con.Close();
+                populate();
+         */
+
     }
 }

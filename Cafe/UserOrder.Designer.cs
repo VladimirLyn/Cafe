@@ -41,6 +41,7 @@
             this.ItemsGV = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
@@ -88,6 +89,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.ItemsGV1);
             this.panel1.Controls.Add(this.NumberOfItem);
             this.panel1.Controls.Add(this.button2);
@@ -120,11 +122,10 @@
             this.NumberOfItem.BackColor = System.Drawing.Color.Blue;
             this.NumberOfItem.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NumberOfItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.NumberOfItem.Location = new System.Drawing.Point(339, 79);
+            this.NumberOfItem.Location = new System.Drawing.Point(339, 128);
             this.NumberOfItem.Name = "NumberOfItem";
             this.NumberOfItem.Size = new System.Drawing.Size(202, 43);
             this.NumberOfItem.TabIndex = 16;
-            this.NumberOfItem.Text = "Введите номер";
             this.NumberOfItem.TextChanged += new System.EventHandler(this.NumberOfItem_TextChanged);
             // 
             // button2
@@ -218,6 +219,17 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Blue;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
+            this.textBox1.Location = new System.Drawing.Point(339, 79);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(202, 43);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "Введите номер";
+            // 
             // UserOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -259,5 +271,6 @@
         private Button button3;
         private TextBox NumberOfItem;
         private DataGridView ItemsGV1;
+        private TextBox textBox1;
     }
 }

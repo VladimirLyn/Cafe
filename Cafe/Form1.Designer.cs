@@ -34,8 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.UnameTb = new System.Windows.Forms.TextBox();
+            this.PasswordTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -107,21 +107,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Логин";
             // 
-            // textBox1
+            // UnameTb
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
-            this.textBox1.Location = new System.Drawing.Point(68, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 23);
-            this.textBox1.TabIndex = 3;
+            this.UnameTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
+            this.UnameTb.Location = new System.Drawing.Point(68, 127);
+            this.UnameTb.Name = "UnameTb";
+            this.UnameTb.Size = new System.Drawing.Size(182, 23);
+            this.UnameTb.TabIndex = 3;
             // 
-            // textBox2
+            // PasswordTb
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
-            this.textBox2.Location = new System.Drawing.Point(68, 170);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 23);
-            this.textBox2.TabIndex = 5;
+            this.PasswordTb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(64)))));
+            this.PasswordTb.Location = new System.Drawing.Point(68, 170);
+            this.PasswordTb.Name = "PasswordTb";
+            this.PasswordTb.Size = new System.Drawing.Size(182, 23);
+            this.PasswordTb.TabIndex = 5;
             // 
             // label3
             // 
@@ -180,9 +180,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.PasswordTb);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UnameTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.panel1);
@@ -203,8 +203,8 @@
         private Panel panel1;
         private Label Label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox UnameTb;
+        private TextBox PasswordTb;
         private Label label3;
         private Button button1;
         private PictureBox pictureBox1;

@@ -238,7 +238,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
             this.label6.Font = new System.Drawing.Font("Brandish", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1066, 2);
+            this.label6.Location = new System.Drawing.Point(1078, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 43);
             this.label6.TabIndex = 14;
