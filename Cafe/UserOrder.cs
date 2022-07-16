@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,27 @@ namespace Cafe
             InitializeComponent();
         }
 
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\djdf1\Documents\Cafedb.mdf;Integrated Security=True;Connect Timeout=30");
+
+        void populate()
+        {
+            Con.Open();
+            string query = "select * from ItemTbl";
+            SqlDataAdapter sda = new SqlDataAdapter(query, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ItemsGV.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+
+        int num = 0;
+        int price, qty, total;
+        string item;
+
         private void UserOrder_Load(object sender, EventArgs e)
         {
-
+            populate();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -86,7 +105,7 @@ namespace Cafe
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Name = ItemsGV.SelectedRows[0].Cells[1].Value.ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

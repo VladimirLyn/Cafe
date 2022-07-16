@@ -81,8 +81,44 @@ namespace Cafe
 
         private void UsersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
+          
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(UnameTb.Text == "")
+            {
+                MessageBox.Show("Введите ИМЯ пользователя, которого хотите удалить");
+            }
+            else
+            {
+                Con.Open();
+                string query = "delete from UsersTbl where Uname = '"+UnameTb.Text+"'";
+                SqlCommand cmd = new SqlCommand(query,Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Пользователь удалён");
+                Con.Close();
+                populate();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(UnameTb.Text == ""||UphoneTb.Text == "" ||UpasswordTb.Text == "")
+            {
+                MessageBox.Show("Заполните все поля");
+            }
+            else
+            {
+                Con.Open();
+                string query = "update UsersTbl set Uphone='" + UphoneTb.Text + "',Upassword='" + UpasswordTb.Text + "'where Uname ='"+UnameTb.Text+"'";
+                SqlCommand cmd = new SqlCommand(query,Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Пользователь изменён");
+                Con.Close();
+                populate();
+            }
+
         }
     }
 }

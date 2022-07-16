@@ -35,18 +35,22 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ItemsGV = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +59,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
             this.label1.Font = new System.Drawing.Font("Balthazar", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
-            this.label1.Location = new System.Drawing.Point(533, 13);
+            this.label1.Location = new System.Drawing.Point(684, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 28);
             this.label1.TabIndex = 15;
@@ -93,17 +97,18 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.ItemsGV);
             this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Location = new System.Drawing.Point(136, 62);
+            this.panel1.Location = new System.Drawing.Point(123, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(968, 787);
+            this.panel1.Size = new System.Drawing.Size(997, 787);
             this.panel1.TabIndex = 12;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -112,7 +117,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.button2.Location = new System.Drawing.Point(474, 734);
+            this.button2.Location = new System.Drawing.Point(122, 704);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 50);
             this.button2.TabIndex = 14;
@@ -126,7 +131,7 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
             this.label3.Font = new System.Drawing.Font("Balthazar", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
-            this.label3.Location = new System.Drawing.Point(587, 424);
+            this.label3.Location = new System.Drawing.Point(141, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 28);
             this.label3.TabIndex = 12;
@@ -137,12 +142,38 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(192)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(323, 455);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.Category,
+            this.UnitPrice});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 248);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 10;
             this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(642, 273);
+            this.dataGridView2.Size = new System.Drawing.Size(512, 450);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Номер";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Категория";
+            this.Category.Name = "Category";
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.HeaderText = "Цена";
+            this.UnitPrice.Name = "UnitPrice";
             // 
             // label2
             // 
@@ -150,7 +181,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(213)))), ((int)(((byte)(142)))));
             this.label2.Font = new System.Drawing.Font("Balthazar", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(83)))));
-            this.label2.Location = new System.Drawing.Point(789, 759);
+            this.label2.Location = new System.Drawing.Point(122, 756);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 28);
             this.label2.TabIndex = 12;
@@ -162,7 +193,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.button1.Location = new System.Drawing.Point(22, 257);
+            this.button1.Location = new System.Drawing.Point(658, 704);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 80);
             this.button1.TabIndex = 5;
@@ -175,11 +206,11 @@
             this.textBox3.BackColor = System.Drawing.Color.Blue;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.textBox3.Location = new System.Drawing.Point(22, 219);
+            this.textBox3.Location = new System.Drawing.Point(341, 120);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(202, 32);
             this.textBox3.TabIndex = 4;
-            this.textBox3.Text = "Качество";
+            this.textBox3.Text = "Количество";
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
@@ -187,7 +218,7 @@
             this.textBox2.BackColor = System.Drawing.Color.Blue;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.textBox2.Location = new System.Drawing.Point(22, 181);
+            this.textBox2.Location = new System.Drawing.Point(341, 82);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(202, 32);
             this.textBox2.TabIndex = 3;
@@ -199,23 +230,25 @@
             this.textBox1.BackColor = System.Drawing.Color.Blue;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
-            this.textBox1.Location = new System.Drawing.Point(22, 143);
+            this.textBox1.Location = new System.Drawing.Point(341, 44);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(202, 32);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Номер заказа";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // dataGridView1
+            // ItemsGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(192)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(261, 99);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 238);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ItemsGV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(192)))));
+            this.ItemsGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ItemsGV.Location = new System.Drawing.Point(547, 79);
+            this.ItemsGV.Name = "ItemsGV";
+            this.ItemsGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.ItemsGV.RowHeadersWidth = 10;
+            this.ItemsGV.RowTemplate.Height = 25;
+            this.ItemsGV.Size = new System.Drawing.Size(450, 619);
+            this.ItemsGV.TabIndex = 1;
+            this.ItemsGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // comboBox1
             // 
@@ -223,7 +256,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(22, 99);
+            this.comboBox1.Location = new System.Drawing.Point(341, 0);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(202, 38);
@@ -238,7 +271,7 @@
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.button4.Location = new System.Drawing.Point(-2, 236);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 50);
+            this.button4.Size = new System.Drawing.Size(119, 50);
             this.button4.TabIndex = 19;
             this.button4.Text = "Пользователи";
             this.button4.UseVisualStyleBackColor = false;
@@ -251,9 +284,9 @@
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(242)))), ((int)(((byte)(39)))));
             this.button3.Location = new System.Drawing.Point(-2, 149);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 50);
+            this.button3.Size = new System.Drawing.Size(119, 50);
             this.button3.TabIndex = 18;
-            this.button3.Text = "Предметы";
+            this.button3.Text = "Товары";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
@@ -266,7 +299,6 @@
             this.ClientSize = new System.Drawing.Size(1120, 850);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -278,7 +310,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemsGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,9 +330,13 @@
         private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView ItemsGV;
         private ComboBox comboBox1;
         private Button button4;
         private Button button3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridViewTextBoxColumn UnitPrice;
     }
 }
