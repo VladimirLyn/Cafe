@@ -29,16 +29,18 @@ namespace Cafe
             var ds = new DataSet();
             sda.Fill(ds);
             ItemsGV.DataSource = ds.Tables[0];
+            OrdersGv.DataSource = ds.Tables[0];
             Con.Close();
         }
 
-        int num = 0;
-        int price, qty, total;
-        string item;
 
+
+
+        
         private void UserOrder_Load(object sender, EventArgs e)
         {
             populate();
+        
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -75,7 +77,7 @@ namespace Cafe
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -85,8 +87,10 @@ namespace Cafe
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           
         }
+
+        DataTable table = new DataTable();
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
@@ -105,7 +109,7 @@ namespace Cafe
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Name = ItemsGV.SelectedRows[0].Cells[1].Value.ToString();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
